@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Edit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css    ">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+    p.item {
+      padding: 16px;
+      text-align: center;
+      border-radius: 8px;
+      color: white;
+      background-color: green;
+    }
+  </style>
+</head>
+
+<body class="bg-secondary">
+
+<h3 class="text-center my-5 text-light">Update Product</h3>
+
+<!-- buộc toàn bộ dòng và cột phải bỏ trong class container -->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-10 col-lg-8 col-xl-5">
+      <div class="border p-3 rounded bg-light">
+        <form method="post" action="doneUpdate" th:object="${product}">
+          <div class="form-group" hidden>
+            <label for="id">Id</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-user"></i>
+                  </span>
+              </div>
+              <input id="id" type="text" class="form-control" placeholder="id" name="id" th:field="*{id}">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-user"></i>
+                  </span>
+              </div>
+              <input id="name" type="text" class="form-control" placeholder="Name" name="name" th:field="*{name}">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="category">Category</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+              <input id="category" type="text" class="form-control" placeholder="category" name="category" th:field="*{category}">
+            </div>
+
+          </div>
+          <div class="form-group">
+            <label for="brand">Brand</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-lock"></i>
+                </span>
+              </div>
+              <input id="brand" type="text" class="form-control" placeholder="brand" name="brand" th:field="*{brand}">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="color">Color</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-lock"></i>
+                </span>
+              </div>
+              <input id="color" type="text" class="form-control" placeholder="color" name="color" th:field="*{color}">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="price">Price</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-lock"></i>
+                </span>
+              </div>
+              <input id="price" type="number" class="form-control" placeholder="price" name="price" th:field="*{price}">
+            </div>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-success px-5" type="submit">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+
+</html>
